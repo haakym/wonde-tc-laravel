@@ -12,18 +12,15 @@ class ClassFetcherService
     }
     
     /**
-     * Get class by class name with students, lessons and period.
+     * Get class by classes.
      * 
      * @return Wonde\ResultIterator
      */
-    public function getClassByName(string $name)
+    public function getClasses(array $includes = [], array $parameters = [])
     {
         return $this->wondeClient
                 ->school(env('WONDE_SCHOOL_ID'))
                 ->classes
-                ->all(
-                    ['students', 'lessons', 'lessons.period'],
-                    ['class_name' => $name]
-                );
+                ->all($includes, $parameters);
     }
 }
