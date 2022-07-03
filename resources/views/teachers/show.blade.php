@@ -1,6 +1,12 @@
 @extends('layout')
 
 @section('content')
+    <nav>
+        <a href="{{ route('home') }}">
+            Select a different teacher
+        </a>
+    </nav>
+
     <h1>{{ $teacher->forename }} {{ $teacher->surname }}</h1>
     
     <h2>Classes</h2>

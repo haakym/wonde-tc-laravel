@@ -1,6 +1,12 @@
 @extends('layout')
 
 @section('content')
+    <nav>
+        <a href="{{ route('teachers.show', $class->current()->lessons->data[0]->employee) }}">
+            Return to teacher
+        </a>
+    </nav>
+
     <h1>Class: {{ $class->current()->name }}</h1>
 
     <h2>Lessons</h2>
